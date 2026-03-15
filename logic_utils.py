@@ -18,7 +18,16 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+#FIX: made sure the variables were integers before comparing. Using CoPilot agent Mode.
+    guess = int(guess)
+    secret = int(secret)
+    if guess == secret:
+        return "Win", "🎉 Correct!"
+    
+    if guess > secret:
+        return "Too High", "📉 Go LOWER!"
+    else:
+        return "Too Low", "📈 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
